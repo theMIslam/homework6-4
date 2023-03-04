@@ -23,8 +23,8 @@ class OperationsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(requireActivity()).get(CounterViewModel::class.java)
-viewModel._operations.observe(viewLifecycleOwner,Observer{
-    binding.tv.text = it
+        viewModel._operations.observe(viewLifecycleOwner,Observer{
+            binding.tv.text = it
 })
 
     }
