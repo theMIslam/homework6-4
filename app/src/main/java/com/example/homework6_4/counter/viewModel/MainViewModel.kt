@@ -3,7 +3,7 @@ package com.example.homework6_4.counter.viewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class CounterViewModel : ViewModel() {
+class MainViewModel : ViewModel() {
 var count = 0
 var plus = ""
     val _counter = MutableLiveData<String>()

@@ -8,12 +8,12 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.homework6_4.databinding.FragmentOperationsBinding
-import com.example.homework6_4.counter.viewModel.CounterViewModel
+import com.example.homework6_4.counter.viewModel.MainViewModel
 
 class OperationsFragment : Fragment() {
 
     private lateinit var binding: FragmentOperationsBinding
-    private lateinit var viewModel: CounterViewModel
+    private lateinit var viewModel: MainViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentOperationsBinding.inflate(inflater, container, false)
@@ -22,7 +22,7 @@ class OperationsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(requireActivity()).get(CounterViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
         viewModel._operations.observe(viewLifecycleOwner,Observer{
             binding.tv.text = it
 })

@@ -7,13 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.homework6_4.counter.viewModel.CounterViewModel
+import com.example.homework6_4.counter.viewModel.MainViewModel
 import com.example.homework6_4.databinding.FragmentCounterBinding
 
 class CounterFragment : Fragment() {
 
     private lateinit var binding: FragmentCounterBinding
-    private lateinit var viewModel: CounterViewModel
+    private lateinit var viewModel: MainViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentCounterBinding.inflate(inflater, container, false)
@@ -22,7 +22,7 @@ class CounterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(requireActivity()).get(CounterViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
 
         viewModel._counter.observe(viewLifecycleOwner, Observer { count ->
             binding.counterTextView.text = count.toString()
